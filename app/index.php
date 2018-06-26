@@ -48,15 +48,15 @@ function authenticate() {
 	}
 }
 
-$app->map ( "/properties/search(/:prefix)", 'authenticate', function ($prefix = null) use($app) {
+$app->map ( "/properties/search(/:county)", 'authenticate', function ($county = null) use($app) {
 	
 	$httpMethod = $app->request->getMethod ();
 	$action = null;
 	$parameters ["body"] = null;
-	$parameters ["SearchingString"] = $prefix;
+	$parameters ["SearchingString"] = $county;
 	
-	if ($prefix != null) {
-		$action = ACTION_SEARCH_RECIPES;
+	if ($county != null) {
+		$action = ACTION_SEARCH_PROPERTIES;
 	}
 	return new loadRunMVCComponents ( "PropertyModel", "PropertyController", "GeneralView", $action, $app, $parameters );
 	
@@ -80,18 +80,18 @@ $app->map ( "/properties(/:id)", 'authenticate', function ($propertyID = null) u
 		switch ($httpMethod) {
 			case "GET" :
 				if ($propertyID != null)
-					$action = ACTION_GET_RECIPE;
+					$action = ACTION_GET_PROPERTY;
 				else
-					$action = ACTION_GET_RECIPES;
+					$action = ACTION_GET_PROPERTIES;
 				break;
 			case "POST" :
-				$action = ACTION_CREATE_RECIPE;
+				$action = ACTION_CREATE_PROPERTY;
 				break;
 			// case "PUT" :
-				// $action = ACTION_UPDATE_RECIPE;
+				// $action = ACTION_UPDATE_PROPERTY;
 				// break;
 			case "DELETE" :
-				$action = ACTION_DELETE_RECIPE;
+				$action = ACTION_DELETE_PROPERTY;
 				break;
 			default :
 		}
