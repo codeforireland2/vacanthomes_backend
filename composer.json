@@ -1,0 +1,6 @@
+{
+    "require": {
+        "slim/slim": "^3.0",
+        "overtrue/phplint": "^1.1"
+    }
+}
