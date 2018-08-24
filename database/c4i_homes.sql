@@ -17,13 +17,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `c4i_homes`
+-- Database: `c4i_homes`
 --
+
+CREATE DATABASE c4i_homes;
+USE c4i_homes;
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `properties`
+-- table structure for table `properties`
 --
 
 CREATE TABLE `properties` (
