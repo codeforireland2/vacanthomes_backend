@@ -1,8 +1,8 @@
 <?php
 /* database constants */
 define("DB_HOST", "localhost" ); 		// set database host
-define("DB_USER", "c4iUser" ); 			// set database user
-define("DB_PASS", "bGsJafCHQ7LDPFGU" ); 				// set database password
+define("DB_USER", "" ); 			// create database user
+define("DB_PASS", "" ); 				// create database password
 define("DB_PORT", 3306);				// set database port
 define("DB_NAME", "c4i_homes" ); 			// set database name
 define("DB_CHARSET", "utf8" ); 			// set database charset
